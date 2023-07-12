@@ -1,7 +1,8 @@
 import '@styles/globals.css';
 import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
-export const metadata={
+export const metadata = {
   title: "prompt-nextjs",
   description: "Discover and share AI Prompts"
 }
@@ -9,17 +10,18 @@ export const metadata={
 const RootLayout = ({children}) => {
   return (
     <html lang="en">
-      <body>
+    <body>
+    <Provider>
       <div className="main">
-        <div className="gradient" />
+        <div className="gradient"/>
       </div>
 
       <main className="app">
-        <Nav />
+        <Nav/>
         {children}
       </main>
-
-      </body>
+    </Provider>
+    </body>
     </html>
   );
 };
